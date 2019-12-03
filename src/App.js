@@ -7,6 +7,7 @@ import Preview from './Preview.js'
 function App() {
   const [partyNumber, setPartyNumber] = useState(2)
   const [reviewText, setReviewText] = useState('')
+  const [reviewEmojis, setReviewEmojis] = useState({})
 
   // I'm not sure that this is cleaner than just passing separate setState
   // functions to the onChange handlers– I would love to hear the logic behind this
@@ -16,7 +17,13 @@ function App() {
   function updatePreview(event) {
     const routeUpdate = {
       feedback: reviewText => setReviewText(reviewText),
-      party: partyNumber => setPartyNumber(Number(partyNumber))
+      party: partyNumber => setPartyNumber(Number(partyNumber)),
+      ambienceGood: () => setReviewEmojis({ ...reviewEmojis, ambience: '👍' }),
+      ambienceBad: () => setReviewEmojis({ ...reviewEmojis, ambience: '👎' }),
+      foodGood: () => setReviewEmojis({ ...reviewEmojis, food: '👍' }),
+      foodBad: () => setReviewEmojis({ ...reviewEmojis, food: '👎' }),
+      serviceGood: () => setReviewEmojis({ ...reviewEmojis, service: '👍' }),
+      serviceBad: () => setReviewEmojis({ ...reviewEmojis, service: '👎' })
     }
     routeUpdate[event.target.name](event.target.value)
   }
@@ -29,7 +36,11 @@ function App() {
           <Form updatePreview={updatePreview} />
         </section>
         <section className='app-right'>
-          <Preview partyNumber={partyNumber} reviewText={reviewText} />
+          <Preview
+            partyNumber={partyNumber}
+            reviewText={reviewText}
+            reviewEmojis={reviewEmojis}
+          />
         </section>
       </main>
     </div>

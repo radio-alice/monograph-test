@@ -1,4 +1,5 @@
 import React from 'react'
+import EmojiSelector from './EmojiSelector'
 import './Form.css'
 
 function Form(props) {
@@ -25,7 +26,23 @@ function Form(props) {
       />
 
       <label className='form-label'>How was your meal?</label>
-      <div></div>
+      <div>
+        <EmojiSelector
+          updatePreview={updatePreview}
+          name='ambience'
+          description='✨did you like the ~ambience~ ✨'
+        />
+        <EmojiSelector
+          updatePreview={updatePreview}
+          name='food'
+          description='👩‍🍳 how tasty was the food? 🍜'
+        />
+        <EmojiSelector
+          updatePreview={updatePreview}
+          name='service'
+          description='🍽 how was our service? 🍷'
+        />
+      </div>
     </div>
   )
 }
