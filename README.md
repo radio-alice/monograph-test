@@ -1,28 +1,6 @@
-This take-home test was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Emoji Picker Design
 
-## Getting started
-- Clone the repo: `git clone git@github.com:monographhq/test-frontend.git`
-- Install dependencies: `yarn`
-- Make sure the app runs: `yarn start`
-
-## Frontend Test
-
-### Dining review app
-
-Design Reference: [Figma File](https://www.figma.com/file/jjqRhIa54hOakjjAWkpbmC/Take-home-frontend-test?node-id=0%3A1)
-
-![Dining App](/app.png)
-
-1. **Dynamic inputs** - The Preview section on the right has static placeholder text. Wire up the app so that anything typed in both the feedback and party inputs updates the preview on the right.
-2. **Refactor inputs** - Depending on how you wrote the first step, you may need to refactor the update method to only use a single method (instead of two) for updating each input. Make sure you're only passing a single method to both inputs. For example:
-    ```
-    update() {}
-    <input onChange={update}>
-    <input onChange={update}>
-    ```
-3. **Product decision** - We're a small team at Monograph so you may be asked to make recommendations based on a feature we're building. Code from scratch, modify a library, or use a best practice idea is often a decision we're confronted with. You'll be adding an emoji selector to the form on the left. In the [Figma File](https://www.figma.com/file/jjqRhIa54hOakjjAWkpbmC/Take-home-frontend-test?node-id=0%3A1) we've added a few ideas, but we'd like to see your thinking around the best way to implement a feature which allows a user to express their emotions after dining somewhere.
-
-    In your README doc, write a few sentences about why you might pick a certain direction.
+The goal of this emoji picker is (presumably) to strike a balance between streamlining the submit-feedback flow and ensuring that the feedback is actually helpful to the restaurant. I chose to use a few emojis and short descriptions to create a mini-review that attempts to capture the metrics on which one might judge a restaurant. This way the user still gets the ease of picking emojis rather than being forced to write an actual review, but the restaurant also learns what exactly they can do better (instead of just receiving an inscrutable frowny face). The final design probably couldn't be called an 'emoji picker' but I assume you're more interested in how I think about product design than my ability to implement a perfect emoji picker.
 
 4. **Add emoji selector** - Now implement your idea in code and render it on the right in the Preview section.
 5. **Style preview card** - Based on the [Figma File](https://www.figma.com/file/jjqRhIa54hOakjjAWkpbmC/Take-home-frontend-test?node-id=0%3A1), add CSS styling to the Preview area. In Figma you can click the "Code" tab in the upper right to get the relevant CSS values for each element you click.
