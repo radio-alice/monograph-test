@@ -1,8 +1,12 @@
-.app {
+@media (max-width: 576px) {
+  .app-main {
+    flex-direction: column-reverse;
+  }
 }
 
 .app-main {
   display: flex;
+  min-height: 80vh;
 }
 
 .app-left {
@@ -16,5 +20,4 @@
   justify-content: center;
   flex: 0 0 50%;
   background: #f8fbfd;
-  min-height: 80vh;
 }

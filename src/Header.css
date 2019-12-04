@@ -1,5 +1,24 @@
+@media (max-width: 576px) {
+  .header-illustration {
+    display: none;
+  }
+  .header-content {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 576px) {
+  .header-illustration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 270px;
+  }
+  .header-content {
+    font-size: 3.5rem;
+  }
+}
 .header {
-  padding: 80px 80px;
+  padding: 3rem 3rem;
   border-bottom: 1px solid #ccc;
 }
 
@@ -11,14 +30,6 @@
 }
 
 .header-content {
-  font-size: 3.5rem;
   font-weight: 300;
   margin: 1rem 0 0;
-}
-
-.header-illustration {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
 }

@@ -1,3 +1,16 @@
+@media (max-width: 576px) {
+  .form {
+    margin: 1rem;
+  }
+  .form-textarea {
+    width: 90%;
+  }
+}
+@media (min-width: 576px) {
+  .form-textarea {
+    width: 100%;
+  }
+}
 .form {
   width: 480px;
   margin-top: 3rem;
@@ -9,7 +22,6 @@
 }
 
 .form-textarea {
-  width: 100%;
   font-size: 1.25rem;
   padding: 1rem;
   background: rgba(222, 237, 247, 0.2);
@@ -30,4 +42,5 @@
 .emoji-form {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -1,3 +1,8 @@
+@media (max-width: 576px) {
+  .preview {
+    margin: 1rem;
+  }
+}
 .preview {
   width: 480px;
   margin-top: 3rem;
@@ -13,6 +18,7 @@
 .preview-emoji {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .preview-emoji > span {
   border-radius: 5rem;
