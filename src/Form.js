@@ -26,21 +26,21 @@ function Form(props) {
       />
 
       <label className='form-label'>How was your meal?</label>
-      <div>
-        <EmojiSelector
-          updatePreview={updatePreview}
-          name='ambience'
-          description='✨did you like the ~ambience~ ✨'
-        />
+      <div className='emoji-form'>
         <EmojiSelector
           updatePreview={updatePreview}
           name='food'
-          description='👩‍🍳 how tasty was the food? 🍜'
+          description='How tasty was the food?'
         />
         <EmojiSelector
           updatePreview={updatePreview}
           name='service'
-          description='🍽 how was our service? 🍷'
+          description='How was our service?'
+        />
+        <EmojiSelector
+          updatePreview={updatePreview}
+          name='ambience'
+          description='Did you like the ~ambience~ ?'
         />
       </div>
     </div>

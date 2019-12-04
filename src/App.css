@@ -1,12 +1,9 @@
 .app {
-
 }
-
 
 .app-main {
   display: flex;
 }
-
 
 .app-left {
   display: flex;
@@ -18,6 +15,6 @@
   display: flex;
   justify-content: center;
   flex: 0 0 50%;
-  background: #F8FBFD;
+  background: #f8fbfd;
   min-height: 80vh;
 }

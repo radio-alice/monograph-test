@@ -9,13 +9,18 @@ function Preview(props) {
       <div className='preview-content'>
         <div className='preview-emoji'>
           {Object.entries(reviewEmojis).map(([property, emoji]) => (
-            <p key={property}>
-              ↝ {property}: <span>{emoji}</span>
-            </p>
+            <span key={property}>
+              <em>{property}</em>{' '}
+              <span className='preview-emoji-thumb'>{emoji}</span>
+            </span>
           ))}
         </div>
         <div className='preview-feedback'>
-          {reviewText || 'Let us know what we did well or could improve...'}
+          {reviewText || (
+            <p className='preview-feedback-placeholder'>
+              Let us know what we did well or could improve...
+            </p>
+          )}
         </div>
         <div className='preview-party'>{partyNumber} people dined here.</div>
       </div>

@@ -2,3 +2,40 @@
   width: 480px;
   margin-top: 3rem;
 }
+
+.preview-content {
+  background: white;
+  box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.preview-emoji {
+  display: flex;
+  flex-direction: row;
+}
+.preview-emoji > span {
+  border-radius: 5rem;
+  font-size: 1.25rem;
+  padding: 0.6rem;
+  margin: 2rem 1rem;
+  border: solid 0.25rem rgb(88, 88, 197);
+  position: relative;
+}
+.preview-emoji-thumb {
+  position: absolute;
+  bottom: -0.5rem;
+  right: -1.5rem;
+  font-size: 2rem;
+}
+
+.preview-feedback {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.preview-feedback-placeholder {
+  color: rgba(0, 0, 0, 0.253);
+}
+.preview-party {
+  font-size: 0.75rem;
+}
