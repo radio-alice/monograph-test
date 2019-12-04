@@ -7,7 +7,11 @@ import Preview from './Preview.js'
 function App() {
   const [partyNumber, setPartyNumber] = useState(2)
   const [reviewText, setReviewText] = useState('')
-  const [reviewEmojis, setReviewEmojis] = useState({})
+  const [reviewEmojis, setReviewEmojis] = useState({
+    ambience: '😐',
+    food: '😐',
+    service: '😐'
+  })
 
   // I'm not sure that this is cleaner than just passing separate setState
   // functions to the onChange handlers– I would love to hear the logic behind this
