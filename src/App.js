@@ -1,49 +1,65 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import './App.css'
 import Header from './Header.js'
 import Form from './Form.js'
 import Preview from './Preview.js'
 
-function App() {
-  const [partyNumber, setPartyNumber] = useState(2)
-  const [reviewText, setReviewText] = useState('')
-  const [reviewEmojis, setReviewEmojis] = useState({
+const initialState = {
+  partyNumber: 2,
+  reviewText: '',
+  reviewEmojis: {
     ambience: '😐',
     food: '😐',
     service: '😐'
-  })
-
-  // I'm not sure that this is cleaner than just passing separate setState
-  // functions to the onChange handlers– I would love to hear the logic behind this
-  // refactor. Using a single state object comes at a performance hit and makes it
-  // harder to refactor later. The ideal would probably be to use a state manager
-  // like Redux, but that seems like overkill here.
-  function updatePreview(event) {
-    const routeUpdate = {
-      feedback: reviewText => setReviewText(reviewText),
-      party: partyNumber => setPartyNumber(Number(partyNumber)),
-      ambienceGood: () => setReviewEmojis({ ...reviewEmojis, ambience: '👍' }),
-      ambienceBad: () => setReviewEmojis({ ...reviewEmojis, ambience: '👎' }),
-      foodGood: () => setReviewEmojis({ ...reviewEmojis, food: '👍' }),
-      foodBad: () => setReviewEmojis({ ...reviewEmojis, food: '👎' }),
-      serviceGood: () => setReviewEmojis({ ...reviewEmojis, service: '👍' }),
-      serviceBad: () => setReviewEmojis({ ...reviewEmojis, service: '👎' })
-    }
-    routeUpdate[event.target.name](event.target.value)
   }
+}
+function reducer(state, action) {
+  const routeUpdate = {
+    feedback: reviewText => ({ ...state, reviewText }),
+    party: partyNumber => ({ ...state, partyNumber: Number(partyNumber) }),
+    ambienceGood: () => ({
+      ...state,
+      reviewEmojis: { ...state.reviewEmojis, ambience: '👍' }
+    }),
+    ambienceBad: () => ({
+      ...state,
+      reviewEmojis: { ...state.reviewEmojis, ambience: '👎' }
+    }),
+    foodGood: () => ({
+      ...state,
+      reviewEmojis: { ...state.reviewEmojis, food: '👍' }
+    }),
+    foodBad: () => ({
+      ...state,
+      reviewEmojis: { ...state.reviewEmojis, food: '👎' }
+    }),
+    serviceGood: () => ({
+      ...state,
+      reviewEmojis: { ...state.reviewEmojis, service: '👍' }
+    }),
+    serviceBad: () => ({
+      ...state,
+      reviewEmojis: { ...state.reviewEmojis, service: '👎' }
+    })
+  }
+  return routeUpdate[action.type](action.payload)
+}
+
+function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
     <div className='app'>
       <Header />
       <main className='app-main'>
         <section className='app-left'>
-          <Form updatePreview={updatePreview} />
+          <Form dispatch={dispatch} />
         </section>
         <section className='app-right'>
           <Preview
-            partyNumber={partyNumber}
-            reviewText={reviewText}
-            reviewEmojis={reviewEmojis}
+            partyNumber={state.partyNumber}
+            reviewText={state.reviewText}
+            reviewEmojis={state.reviewEmojis}
           />
         </section>
       </main>
