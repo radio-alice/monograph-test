@@ -1,7 +1,3 @@
 ## Emoji Picker Design
 
 The goal of this emoji picker is (presumably) to strike a balance between streamlining the submit-feedback flow and ensuring that the feedback is actually helpful to the restaurant. I chose to use a few emojis and short descriptions to create a mini-review that attempts to capture the metrics on which one might judge a restaurant. This way the user still gets the ease of picking emojis rather than being forced to write an actual review, but the restaurant also learns what exactly they can do better (instead of just receiving an inscrutable frowny face). The final design probably couldn't be called an 'emoji picker' but I assume you're more interested in how I think about product design than my ability to implement a perfect emoji picker.
-
-4. **Add emoji selector** - Now implement your idea in code and render it on the right in the Preview section.
-5. **Style preview card** - Based on the [Figma File](https://www.figma.com/file/jjqRhIa54hOakjjAWkpbmC/Take-home-frontend-test?node-id=0%3A1), add CSS styling to the Preview area. In Figma you can click the "Code" tab in the upper right to get the relevant CSS values for each element you click.
-6. **Responsive styling** - Now that your Preview is looking good, we need to make the app work for mobile users. We'd like the Preview section to be on top in mobile and everything to look similar to the Figma mockup. Don't worry about tablet styling for now, this is just for mobile.
