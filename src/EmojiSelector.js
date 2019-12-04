@@ -1,9 +1,10 @@
 import React from 'react'
+import './EmojiSelector.css'
 
 export default function(props) {
   const { updatePreview, name, description } = props
   return (
-    <div>
+    <div className='emoji-selector'>
       <button
         name={name + 'Good'}
         onClick={updatePreview}
